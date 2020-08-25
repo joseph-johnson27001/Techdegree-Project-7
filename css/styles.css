@@ -1,11 +1,67 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* ------------------------------------------------------------------
+HEADER
+------------------------------------------------------------------ */
 
 #header {
-  background-color: #7477BF
+  background-color: #7477BF;
+  color: white;
+  position: relative;
+  padding: 0px 10px;
+  display: flex;
 }
+
+#header * {
+  font-weight: 100;
+}
+
+#name-area {
+  right: 0;
+  height: 100%;
+}
+
+#name-area h3 {
+  height: 100%;
+  margin-top: 25px;
+}
+
+#main-profile-image {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  margin-left: 10px;
+}
+
+#main-photo-area {
+  border-left: 1px solid black;
+  height: 50px;
+  width: 50px;
+  margin-top: 15px;
+  padding-right: 20px;
+}
+
+#bell-icon-container {
+  margin-left: auto;
+  margin-top: 5px;
+  padding-top: 10px;
+}
+
+
+
+/* ------------------------------------------------------------------
+NAVIGATION
+------------------------------------------------------------------ */
 
 #navigation {
   background-color: #4D4B72;
 }
+
+/* ------------------------------------------------------------------
+MAIN
+------------------------------------------------------------------ */
 
 .profile-image {
   border-radius: 50%;
