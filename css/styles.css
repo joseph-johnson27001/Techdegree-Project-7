@@ -70,7 +70,6 @@ nav {
 }
 
 .main-header {
-  display: flex;
   grid-area: main-header;
 }
 
@@ -200,15 +199,22 @@ MAIN
 ------------------------------------------------------------------ */
 /* Dashboard & Searchbar */
 
+.main-header {
+  display: flex;
+  position: relative;
+}
+
 .main-header-search {
+  position: absolute;
+  right:: 0;
   text-align: right;
   background-color: #DCDCDC;
   border-bottom-left-radius: 25px;
-  margin: 0px -10px 0px auto;
-  width: 70%;
+  width: 60%;
+  right: 0;
 }
 
-.headline {
+.main-header-container {
   display: inline-block;
   width: 30%;
 }
@@ -407,7 +413,7 @@ MAIN
 @media (min-width: 768px) {
     .timezone-area {
     position: absolute;
-    bottom: 0;
+    bottom: 5px;
     width: 96%;
   }
 }
