@@ -78,10 +78,10 @@
     <div class="traffic-header">
       <h3>TRAFFIC</h3>
       <ul class="traffic-nav">
-        <li class="traffic-nav-link">Hourly</li>
-        <li class="traffic-nav-link">Daily</li>
-        <li class="traffic-nav-link active">Weekly</li>
-        <li class="traffic-nav-link">Monthly</li>
+        <li class="traffic-nav-link"><a href="#">Hourly</a></li>
+        <li class="traffic-nav-link"><a href="#">Daily</a></li>
+        <li class="traffic-nav-link active"><a href="#">Weekly</a></li>
+        <li class="traffic-nav-link"><a href="#">Monthly</a></li>
       </ul>
     </div>
     <div class="widget-container-full">
@@ -110,67 +110,73 @@
 
   <!-- SOCIAL STATUS SECTION -->
   <section class="social">
-    <h3>SOCIAL STATS</h3>
-  <div class="social">
 
-  <div class="social-container">
-    <div class="social-image">
-      <!-- NEED TO CHANGE BELOW TO AN INLINE SVG -->
-        <a href="">
-          <img src="icons/icon-twitter.svg" alt="Twitter Icon" height="50"
-      width="50">
-        </a>
-      </div>
-      <div class="social-text">
-        <p>Twitter</p>
-        <p>10,345</p>
-      </div>
-    </div>
-  </div>
-
-
+      <h3>SOCIAL STATS</h3>
+  <div class="social-area">
     <div class="social-container">
       <div class="social-image">
+        <div class="icon-area">
         <!-- NEED TO CHANGE BELOW TO AN INLINE SVG -->
           <a href="">
-            <img src="icons/icon-facebook.svg" alt="Facebook Icon" height="50"
-        width="50">
+            <img src="icons/icon-twitter.svg" alt="Twitter Icon" height="50"
+        width="50" class="social-icon">
           </a>
+          </div>
         </div>
         <div class="social-text">
-          <p>Facebook</p>
-          <p>8,739</p>
+          <p class="social-company">Twitter</p>
+          <p class="social-numbers">10,345</p>
         </div>
       </div>
+
 
       <div class="social-container">
         <div class="social-image">
+            <div class="icon-area">
           <!-- NEED TO CHANGE BELOW TO AN INLINE SVG -->
             <a href="">
-              <img src="icons/icon-google-plus.svg" alt="Google Plus Icon" height="50"
-          width="50">
+              <img src="icons/icon-facebook.svg" alt="Facebook Icon" height="50"
+          width="50" class="social-icon">
             </a>
           </div>
+        </div>
           <div class="social-text">
-            <p>Google+</p>
-            <p>2,530</p>
+            <p class="social-company">Facebook</p>
+            <p class="social-numbers">8,739</p>
           </div>
         </div>
-  </div>
+
+        <div class="social-container">
+          <div class="social-image">
+              <div class="icon-area">
+            <!-- NEED TO CHANGE BELOW TO AN INLINE SVG -->
+              <a href="">
+                <img src="icons/icon-google-plus.svg" alt="Google Plus Icon" height="50"
+            width="50" class="social-icon">
+              </a>
+            </div>
+            </div>
+            <div class="social-text">
+              <p class="social-company">Google+</p>
+              <p class="social-numbers">2,530</p>
+            </div>
+          </div>
+    </div>
   </section>
   <!-- NEW MEMBERS & RECENT ACTIVITY-->
   <!-- New Members Widget -->
   <section class="members">
-    <h3>NEW MEMBERS</h3>
-
+    <div class="member-activity-heading">
+      <h3>NEW MEMBERS</h3>
+    </div>
     <div class="members-container">
       <img src="images/member-1.jpg" alt="Victoria Chambers Profile Image"
       class="profile-image">
       <div class="members-text">
         <p>Victoria Chambers</p>
         <a href="#">victoria.chambers80@example.com</a>
+        <p class="member-date">10/15/15</p>
       </div>
-      <p>10/15/15</p>
     </div>
 
     <div class="members-container">
@@ -179,8 +185,8 @@
       <div class="members-text">
         <p>Dale Byrd</p>
         <a href="#">dale.byrd52@example.com</a>
+        <p class="member-date">10/15/15</p>
       </div>
-      <p>10/15/15</p>
     </div>
 
     <div class="members-container">
@@ -189,8 +195,8 @@
       <div class="members-text">
         <p>Dawn Wood</p>
         <a href="#">dawn.wood16@example.com</a>
+        <p class="member-date">10/15/15</p>
       </div>
-      <p>10/15/15</p>
     </div>
 
     <div class="members-container">
@@ -199,29 +205,32 @@
       <div class="members-text">
         <p>Dan Oliver</p>
         <a href="#">dan.oliver82@example.com</a>
+        <p class="member-date">10/15/15</p>
       </div>
-      <p>10/15/15</p>
     </div>
   </section>
 
   <!-- Recent Activity Widget -->
   <section class="activity">
+    <div class="member-activity-heading">
       <h3>RECENT ACTIVITY</h3>
+    </div>
     <div class="recent-activity-container">
       <img src="images/member-1.jpg" alt="Victoria Chambers Profile Image"
       class="profile-image">
       <div class="members-text">
-        <p>Victoria Chambers commented on YourApp's SEO Tips</p>
-        <p>4 hours ago</p>
+        <p class="comment"> Victoria Chambers commented on YourApp's SEO Tips</p>
+        <p class="time">4 hours ago</p>
       </div>
+
     </div>
 
     <div class="recent-activity-container">
       <img src="images/member-2.jpg" alt="Dale Byrd Profile Image"
       class="profile-image">
       <div class="members-text">
-        <p>Dale Byrd liked the post Facebook's Changes for 2016</p>
-        <p>5 hours ago</p>
+        <p class="comment">Dale Byrd liked the post Facebook's Changes for 2016</p>
+        <p class="time">5 hours ago</p>
       </div>
     </div>
 
@@ -229,8 +238,8 @@
       <img src="images/member-3.jpg" alt="Dawn Wood Profile Image"
       class="profile-image">
       <div class="members-text">
-        <p>Dawn Wood commented on Facebook's Changes for 2016</p>
-        <p>5 hours ago</p>
+        <p class="comment">Dawn Wood commented on Facebook's Changes for 2016</p>
+        <p class="time">5 hours ago</p>
       </div>
     </div>
 
@@ -238,8 +247,8 @@
       <img src="images/member-4.jpg" alt="Dan Oliver Profile Image"
       class="profile-image">
       <div class="members-text">
-        <p>Dan Oliver posted YourApp's SEO Tips</p>
-        <p>1 day ago</p>
+        <p class="comment">Dan Oliver posted YourApp's SEO Tips</p>
+        <p class="time">1 Day ago</p>
       </div>
     </div>
   </section>
@@ -254,7 +263,7 @@
       class="form-field" id="userField">
       <textarea placeholder="Message for user" class="form-area"
         id="messageField"></textarea>
-      <button class="button=primary" id="send">Send</button>
+      <button class="message-button-primary" id="send">SEND</button>
     </form>
   </section>
 
@@ -262,32 +271,39 @@
   <!-- Local Settings Widget -->
   <section class="settings">
     <h3>SETTINGS</h3>
+      <div class="settings-area">
+      <!-- Custom CSS Toggle Code -->
+      <div class="settings-text">
+      <p >Send Email Notifications</p>
+      </div>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+      <br>
+      <!-- Custom CSS Toggle Code -->
+      <div class="settings-text">
+      <p>Set Profile to Public</p>
+      </div>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
 
-    <!-- Custom CSS Toggle Code -->
-    <p>Send Email Notifications</p>
-    <label class="switch">
-      <input type="checkbox">
-      <span class="slider round"></span>
-    </label>
-    <!-- Custom CSS Toggle Code -->
-    <p>Set Profile to Public</p>
-    <label class="switch">
-      <input type="checkbox">
-      <span class="slider round"></span>
-    </label>
-
-    <br>
-
-    <select class="form-field" id="timezone">
-      <option disabled selected>Select a Timezone</option>
-      <option>Eastern</option>
-      <option>Central</option>
-      <option>Pacific</option>
-      <option>GMT</option>
-    </select>
-    <div class="settings-button">
-      <button class="button-primary" id="save">Save</button>
-      <button class="button-disabled" id="cancel">Cancel</button>
+      <br>
+    <div class="timezone-area">
+      <select class="form-field" id="timezone">
+        <option disabled selected>Select a Timezone</option>
+        <option>Eastern</option>
+        <option>Central</option>
+        <option>Pacific</option>
+        <option>GMT</option>
+      </select>
+    </div>
+      <div class="settings-buttons">
+        <button class="settings-button-primary" id="save">SAVE</button>
+        <button class="settings-button-disabled" id="cancel">CANCEL</button>
+      </div>
     </div>
   </section>
 

@@ -11,6 +11,14 @@ h1 {
   color: darkslategrey;
 }
 
+h3 {
+  margin-left: 10px;
+}
+
+section {
+  margin: 1px;
+  border: 1px solid grey;
+}
 /* ------------------------------------------------------------------
 GRID STYLINGS
 ------------------------------------------------------------------ */
@@ -36,28 +44,37 @@ GRID STYLINGS
     }
   }
 
-  @media (min-width: 768px) {
-    .main {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 100px minmax(300px, auto);
-      grid-template-areas:
-        "main-header main-header"
-        "traffic traffic"
-        "daily mobile"
-        "social social"
-        "members activity"
-        "message settings"
-      ;
-    }
-  }
+header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+  margin: 0px 10px;
+}
 
 nav {
   grid-area: nav;
 }
 
-.main {
-  margin: 0px 10px;
+
+@media (min-width: 768px) {
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 75px repeat(5, auto);
+    grid-template-areas:
+      "main-header main-header"
+      "traffic traffic"
+      "daily mobile"
+      "social social"
+      "members activity"
+      "message settings"
+    ;
+  }
+  nav {
+    min-height: 238vh;
+  }
 }
 
 .main-header {
@@ -67,42 +84,41 @@ nav {
 
 .traffic {
   grid-area: traffic;
-  background-color: red;
+
 }
 
 .daily {
   grid-area: daily;
-  background-color: orange;
+
 }
 
 .mobile {
   grid-area: mobile;
-  background-color: green;
+
 }
 
 .social {
   grid-area: social;
-  background-color: blue;
+
 }
 
 .members {
   grid-area: members;
-  background-color: pink;
+
 }
 
 .activity {
   grid-area: activity;
-  background-color: yellow;
+
 }
 
 .message {
   grid-area: message;
-  background-color: cyan;
+
 }
 
 .settings {
   grid-area: settings;
-  background-color: purple;
 }
 
 /* ------------------------------------------------------------------
@@ -111,7 +127,6 @@ HEADER
 
 header {
   background-color: #7477BF;
-  grid-area: header;
 }
 
 header h3 {
@@ -175,12 +190,10 @@ NAVIGATION
   height: 50px;
 }
 
-
 /* ------------------------------------------------------------------
 MAIN
 ------------------------------------------------------------------ */
 /* Dashboard & Searchbar */
-
 
 .main-header-search {
   text-align: right;
@@ -201,18 +214,227 @@ MAIN
   width: 80%;
   max-width: 400px;
   height: 50%;
-  border: 1px solid white;
+  border: 1px solid grey;
   outline: none;
 }
 
+/* Traffic Area */
+
+.traffic-header h3 {
+  float:left;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.traffic-nav {
+  list-style-type: none;
+  text-align: right;
+  margin-right: 20px;
+}
+
+.traffic-nav-link {
+  display: inline-block;
+}
+
+.traffic-nav-link a {
+  display: block;
+  color: black;
+  background-color: white;
+  border-radius: 10%;
+  text-align: center;
+  margin-top: 3px;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.traffic-nav-link a:focus {
+  color: white;
+  background-color: #81C98F;
+}
 
 /* New Members & Recent Activity */
 
-.profile-image {
-  border-radius: 50%;
+@media (min-width: 768px) {
+  .traffic,
+  .social,
+  .members,
+  .activity {
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+  }
+  .activity {
+    border-left: 1px solid grey;
+  }
 }
 
+.members-container,
+.recent-activity-container {
+  height: 130px;
+  border-bottom: 1px solid grey;
+}
 
+@media (min-width: 768px) {
+.members-container,
+.recent-activity-container {
+  height: 150px;
+  }
+}
+
+.profile-image {
+  margin: 0px 10px 20px 10px;
+  display: inline-block;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+.members-text,
+.comment {
+  display: inline-block;
+  font-size: 14px;
+}
+
+.member-date {
+  display: block;
+}
+
+/* Social Stats */
+
+.social-area {
+    display: flex;
+    justify-content: space-around;
+  }
+
+.social-image {
+    float: left;
+  }
+
+.social-text {
+    float: right;
+  }
+
+.social-container {
+  display: block;
+  margin: 1em 0;
+}
+
+@media (min-width: 768px) {
+  .social-container {
+    border: 1px solid grey;
+    border-radius: 2%;
+    padding: 0px 8em 0px 0px;
+    margin: 2px;
+    margin-bottom: 3em;
+  }
+  .social-image {
+    margin-top: .5em;
+  }
+  .social-numbers {
+    font-size: 25px;
+  }
+}
+
+.icon-area {
+  display: inline-block;
+  background-color: #7377BF;
+  padding: 10px;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.social-icon {
+  height: 30px;
+  width: 30px;
+}
+
+.social-company {
+  color: #7377BF;
+  font-weight: bold;
+}
+
+/* Message User Area */
+.message {
+  text-align: center;
+}
+
+.message h3 {
+  text-align: left;
+  margin-left: 10px;
+}
+
+.form-field,
+.form-area {
+  width: 80%;
+  margin: 5px;
+  clear: both;
+  border: 1px solid lightgray;
+  outline: none;
+}
+
+.form-field {
+  height: 30px;
+}
+
+.message-button-primary {
+  width: 80%;
+  margin: 5px;
+  height: 45px;
+  color: white;
+  background-color: #7377BF;
+  border: 1px solid lightgray;
+  transition: .3s;
+  outline: none;
+}
+
+.message-button-primary:hover {
+  transform: scale(1.05)
+}
+
+.form-area {
+  height: 125px;
+}
+
+/* Settings Area */
+
+.settings-text {
+  display: inline-block;
+  width: 200px;
+}
+
+.settings-area {
+  margin-left: 10px;
+}
+
+.timezone-area {
+  text-align: center;
+}
+
+.settings-buttons {
+  text-align: center;
+}
+
+.settings-button-primary {
+    background-color: #7377BF;
+}
+
+.settings-button-disabled {
+  background-color: #B2B2B2;
+}
+
+.settings-button-primary,
+.settings-button-disabled {
+  color: white;
+  border: 1px solid lightgray;
+  width: 40%;
+  height: 45px;
+  transition: .3s;
+  outline: none;
+}
+
+.settings-button-primary:hover,
+.settings-button-disabled:hover {
+  transform: scale(1.03)
+}
 /* ------------------------------------------------------------------
 RADIO BUTTON STYLING (IN SETTINGS)
 ------------------------------------------------------------------ */
