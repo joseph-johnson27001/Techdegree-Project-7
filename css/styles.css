@@ -29,7 +29,7 @@ GRID STYLINGS
 
   @media (min-width: 768px) {
     .grid-container {
-      grid-template-columns: 70px 1fr;
+      grid-template-columns: 60px 1fr;
       grid-template-areas:
       "header header"
       "nav main"
@@ -178,7 +178,7 @@ NAVIGATION
 ------------------------------------------------------------------ */
 
 #navigation {
-  background-color: #4D4B72;
+  background-color: #4D4C72;
   text-align: center;
 }
 
@@ -251,10 +251,10 @@ MAIN
   display: block;
   color: black;
   background-color: white;
-  border-radius: 10%;
+  border-radius: 15px;
   text-align: center;
   margin-top: 3px;
-  padding: 5px;
+  padding: 8px;
   text-decoration: none;
 }
 
@@ -263,44 +263,11 @@ MAIN
   background-color: #81C98F;
 }
 
-/* New Members & Recent Activity */
-
-.members-container,
-.recent-activity-container {
-  height: 130px;
-  border-bottom: 1px solid #DCDCDC;
-}
-
-@media (min-width: 768px) {
-.members-container,
-.recent-activity-container {
-  height: 150px;
-  }
-}
-
-.profile-image {
-  margin: 0px 10px 20px 10px;
-  display: inline-block;
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
-}
-
-.members-text,
-.comment {
-  display: inline-block;
-  font-size: 14px;
-}
-
-.member-date {
-  display: block;
-}
-
 /* Social Stats */
 
 .social-area {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
 
 .social-image {
@@ -309,7 +276,6 @@ MAIN
 
 .social-text {
     float: right;
-
   }
 
 .social-container {
@@ -320,14 +286,21 @@ MAIN
 @media (min-width: 768px) {
   .social-container {
     border-radius: 2%;
-    padding: 0px 8em 0px 0px;
-    margin-bottom: 3em;
+    width: 30%;
+    margin-bottom:0 3px 3em 0;
+    border: 1px solid  #DCDCDC;
+    display: flex;
   }
   .social-image {
     margin-top: .5em;
   }
   .social-numbers {
-    font-size: 25px;
+    font-size: 35px;
+    margin-left: -5px;
+    font-weight: 100;
+  }
+  .social-company {
+    margin-top: 25px;
   }
 }
 
@@ -349,7 +322,46 @@ MAIN
   font-weight: bold;
 }
 
+/* New Members & Recent Activity */
+
+.members-container,
+.recent-activity-container {
+  height: 130px;
+  border-bottom: 1px solid #DCDCDC;
+}
+
+@media (min-width: 768px) {
+.members-container,
+.recent-activity-container {
+  height: 150px;
+
+  }
+}
+
+.profile-image {
+  margin: 30px 5px 10px 15px;
+  display: inline-block;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+}
+
+.members-text,
+.comment {
+  display: inline-block;
+  font-size: 12px;
+}
+
+.member-date {
+  display: block;
+}
+
+.member-activity-heading {
+  margin-bottom: -20px;
+}
+
 /* Message User Area */
+
 .message {
   text-align: center;
 }
