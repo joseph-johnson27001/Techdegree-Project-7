@@ -49,9 +49,6 @@ let trafficData = {
 
 let trafficOptions = {
   aspectRatio: 2.5,
-  animation: {
-    duration: 0
-  },
   scales: {
     yAxes: [{
       ticks: {

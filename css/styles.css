@@ -49,7 +49,6 @@ nav {
   grid-area: nav;
 }
 
-
 @media (min-width: 768px) {
   .main {
     display: grid;
