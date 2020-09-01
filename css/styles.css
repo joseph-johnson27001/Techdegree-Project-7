@@ -57,6 +57,7 @@ nav {
     grid-template-rows: 75px repeat(5, auto);
     grid-template-areas:
       "main-header main-header"
+      "alert alert"
       "traffic traffic"
       "daily mobile"
       "social social"
@@ -105,6 +106,16 @@ nav {
   grid-area: settings;
 }
 
+#alert {
+  grid-area: alert;
+  margin: 10px;
+  background-color: #DCDCDC;
+  border: 1px solid black;
+}
+
+.alert-banner {
+  margin: 5px;
+}
 
 @media (min-width: 768px) {
   .daily,
@@ -113,6 +124,7 @@ nav {
   .members,
   .activity {
     border-top: 1px solid #DCDCDC;
+    padding-bottom: 3px;
   }
   .daily,
   .members,
@@ -122,6 +134,22 @@ nav {
   .message,
   .settings {
     border-bottom: 1px solid #DCDCDC;
+  }
+}
+
+/* Widget Grid Stylings */
+
+.widget-container-full,
+.widget-container-half {
+  width: 90vw;
+}
+
+@media (min-width: 768px) {
+  .widet-container-full {
+    width: 90vw;
+  }
+  .widget-container-half {
+    width: 45vw;
   }
 }
 
@@ -266,17 +294,17 @@ MAIN
 /* Social Stats */
 
 .social-area {
-    display: flex;
-    justify-content: space-evenly;
-  }
+  display: flex;
+  justify-content: space-evenly;
+}
 
 .social-image {
-    float: left;
-  }
+  float: left;
+}
 
 .social-text {
-    float: right;
-  }
+  float: right;
+}
 
 .social-container {
   display: block;
@@ -288,7 +316,8 @@ MAIN
     border-radius: 2%;
     width: 30%;
     margin-bottom:0 3px 3em 0;
-    border: 1px solid  #DCDCDC;
+    background-color: lightgrey;
+    border: 1px solid black;
     display: flex;
   }
   .social-image {
@@ -456,6 +485,7 @@ MAIN
 .settings-button-disabled:hover {
   transform: scale(1.03)
 }
+
 /* ------------------------------------------------------------------
 RADIO BUTTON STYLING (IN SETTINGS)
 ------------------------------------------------------------------ */
