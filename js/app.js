@@ -15,6 +15,31 @@ const user = document.getElementById("userField");
 const message = document.getElementById("messageField");
 const send = document.getElementById("send");
 
+// Bell Notification Variables:
+
+const bell = document.getElementById("bell-icon");
+const dropdown = document.getElementById("dropdown");
+const badge = document.getElementById("badge");
+/* ---------------------------------------------------
+BELL NOTIFICATION AREA
+-----------------------------------------------------*/
+
+badge.innerHTML = dropdown.children.length;
+
+bell.addEventListener('click', e => {
+
+  const element = e.target;
+    if (dropdown.children.length == 0) {
+      return;
+    }
+    if (dropdown.style.display == "block") {
+      dropdown.style.display = "none";
+    } else {
+      dropdown.style.display = "block";
+    }
+});
+
+
 /* ---------------------------------------------------
 ALERT BANNER
 -----------------------------------------------------*/
@@ -148,3 +173,17 @@ send.addEventListener('click', () => {
       alert(`Message successfully sent to: ${user.value}`);
     }
 });
+
+/* ---------------------------------------------------
+FUNCTIONS
+-----------------------------------------------------*/
+
+function removeNotification(btn){
+    ((btn.parentNode).parentNode).removeChild(btn.parentNode);
+      if (dropdown.children.length == 0) {
+        badge.style.display = "none"
+        dropdown.style.display = "none"
+      } else {
+    badge.innerHTML = dropdown.children.length;
+  }
+};

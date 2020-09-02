@@ -175,6 +175,7 @@ header h3 {
   width: 40px;
   cursor: pointer;
   transition: .5s;
+  position: relative;
 }
 
 #bell-icon:hover {
@@ -203,6 +204,30 @@ header h3 {
 #name-area {
   padding-top: 10px;
   display: inline-block;
+}
+
+/* NUMBER OF NOTIFICATIONS BADGE */
+
+#bell-icon-container #badge {
+  position: absolute;
+  top: 50px;
+  right: 210px;
+  padding: 3px 8px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+  z-index: 100;
+}
+
+/* DROPDOWN MENU */
+
+#dropdown {
+  position: absolute;
+  z-index: 1000;
+  color: purple;
+  background-color: white;
+  border: 1px solid #DCDCDC;
+  display: none;
 }
 
 /* ------------------------------------------------------------------
