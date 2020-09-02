@@ -41,6 +41,7 @@
               <p class="dropdown-messages">Niall Messaged You <button class="notification-close" onclick="removeNotification(this)">X</button></p>
               <p class="dropdown-messages">Lewis Messaged You <button class="notification-close" onclick="removeNotification(this)">X</button></p>
               <p class="dropdown-messages">Shook Messaged You <button class="notification-close" onclick="removeNotification(this)">X</button></p>
+              <p class="dropdown-messages">Sarita Messaged You <button class="notification-close" onclick="removeNotification(this)">X</button></p>
 
           </div>
 
@@ -381,7 +382,7 @@
 
     <form action="" class="widget-container">
       <input type="text" placeholder="Search for user"
-      class="form-field" id="userField">
+      class="form-field" id="userField" autocomplete="on">
       <textarea placeholder="Message for user" class="form-area"
         id="messageField"></textarea>
       <button class="message-button-primary" id="send">SEND</button>
@@ -398,7 +399,7 @@
       <p >Send Email Notifications</p>
       </div>
       <label class="switch">
-        <input type="checkbox">
+        <input type="checkbox" id="email-checkbox">
         <span class="slider round"></span>
       </label>
       <br>
@@ -407,31 +408,31 @@
       <p>Set Profile to Public</p>
       </div>
       <label class="switch">
-        <input type="checkbox">
+        <input type="checkbox" id="profile-checkbox">
         <span class="slider round"></span>
       </label>
 
       <br>
 
-    <div class="timezone-area">
-      <div>
-        <select class="form-field" id="timezone">
-          <option disabled selected>Select a Timezone</option>
-          <option>Eastern</option>
-          <option>Central</option>
-          <option>Pacific</option>
-          <option>GMT</option>
-        </select>
-      </div>
-        <div class="settings-buttons">
-          <button class="settings-button-primary" id="save">SAVE</button>
-          <button class="settings-button-disabled" id="cancel">CANCEL</button>
+      <div class="timezone-area">
+        <div>
+          <select class="form-field" id="timezone">
+            <option disabled selected>Select a Timezone</option>
+            <option>Eastern</option>
+            <option>Central</option>
+            <option>Pacific</option>
+            <option>GMT</option>
+          </select>
+        </div>
+          <div class="settings-buttons">
+            <button class="settings-button-primary" id="save">SAVE</button>
+            <button class="settings-button-disabled" id="cancel">CANCEL</button>
+          </div>
+        </div>
         </div>
       </div>
-      </div>
-    </div>
-  </section>
-</main>
+    </section>
+  </main>
   <script type="text/javascript" src="js/app.js"></script>
   </body>
 </html>

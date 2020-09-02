@@ -9,10 +9,6 @@ const trafficCanvas = document.getElementById("traffic-chart");
 const dailyCanvas = document.getElementById("daily-chart");
 const mobileCanvas = document.getElementById("mobile-chart");
 
-// Traffic Widget Variables
-
-
-
 // Messaging Section Variables:
 
 const user = document.getElementById("userField");
@@ -24,6 +20,37 @@ const send = document.getElementById("send");
 const bell = document.getElementById("bell-icon");
 const dropdown = document.getElementById("dropdown");
 const badge = document.getElementById("badge");
+
+
+// Settings local storage variables:
+
+let emailCheckbox = document.getElementById("email-checkbox");
+  emailCheckbox.onclick = function() {
+    if (document.getElementById('email-checkbox').checked) {
+      localStorage.setItem('email-checkbox', "true");
+  } else {
+      localStorage.setItem('email-checkbox', "false");
+  }
+}
+
+emailStatus = localStorage.getItem('email-checkbox');
+  if (emailStatus == "true") {
+      emailCheckbox.checked = "true";
+}
+
+let profileCheckbox = document.getElementById("profile-checkbox");
+  profileCheckbox.onclick = function() {
+    if (document.getElementById('profile-checkbox').checked) {
+      localStorage.setItem('profile-checkbox', "true");
+  } else {
+      localStorage.setItem('profile-checkbox', "false");
+  }
+}
+
+profileStatus = localStorage.getItem('profile-checkbox');
+  if (profileStatus == "true") {
+      profileCheckbox.checked = "true";
+}
 
 /* ---------------------------------------------------
 BELL NOTIFICATION AREA
@@ -207,6 +234,12 @@ send.addEventListener('click', () => {
 });
 
 /* ---------------------------------------------------
+Local Storage Code
+-----------------------------------------------------*/
+
+
+
+/* ---------------------------------------------------
 FUNCTIONS
 -----------------------------------------------------*/
 
@@ -223,7 +256,8 @@ function removeNotification(btn){
 // Functions for changing Traffic Graph
 
 function hourlyTraffic() {
-  let trafficChart = new Chart(trafficCanvas, {
+  trafficChart.destroy()
+   trafficChart = new Chart(trafficCanvas, {
     type: 'line',
     data: trafficDataHourly,
     options: trafficOptions
@@ -231,7 +265,8 @@ function hourlyTraffic() {
 }
 
 function dailyTraffic() {
-  let trafficChart = new Chart(trafficCanvas, {
+  trafficChart.destroy()
+   trafficChart = new Chart(trafficCanvas, {
     type: 'line',
     data: trafficDataDaily,
     options: trafficOptions
@@ -239,7 +274,8 @@ function dailyTraffic() {
 }
 
 function weeklyTraffic() {
-  let trafficChart = new Chart(trafficCanvas, {
+  trafficChart.destroy()
+   trafficChart = new Chart(trafficCanvas, {
     type: 'line',
     data: trafficDataWeekly,
     options: trafficOptions
@@ -247,7 +283,8 @@ function weeklyTraffic() {
 }
 
 function monthlyTraffic() {
-  let trafficChart = new Chart(trafficCanvas, {
+  trafficChart.destroy()
+   trafficChart = new Chart(trafficCanvas, {
     type: 'line',
     data: trafficDataMonthly,
     options: trafficOptions
