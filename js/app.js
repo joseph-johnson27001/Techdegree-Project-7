@@ -9,6 +9,10 @@ const trafficCanvas = document.getElementById("traffic-chart");
 const dailyCanvas = document.getElementById("daily-chart");
 const mobileCanvas = document.getElementById("mobile-chart");
 
+// Traffic Widget Variables
+
+
+
 // Messaging Section Variables:
 
 const user = document.getElementById("userField");
@@ -20,6 +24,7 @@ const send = document.getElementById("send");
 const bell = document.getElementById("bell-icon");
 const dropdown = document.getElementById("dropdown");
 const badge = document.getElementById("badge");
+
 /* ---------------------------------------------------
 BELL NOTIFICATION AREA
 -----------------------------------------------------*/
@@ -54,15 +59,24 @@ alertBanner.innerHTML =
 alertBanner.addEventListener('click', e => {
   const element = e.target;
   if (element.classList.contains("alert-banner-close")) {
-      alertBanner.style.display = "none"
+      alertBanner.style.display = "none";
   }
 });
 
 /* ---------------------------------------------------
-LINE GRAPH
+TRAFFIC LINE GRAPH
 -----------------------------------------------------*/
+let trafficDataMonthly = {
+  labels: ["January", "February", "March", "April", "May", "June", "July",
+"August", "September", "October", "November", "December"],
+  datasets: [{
+    data: [300, 500, 700, 200, 100, 700, 800, 1100, 900, 200, 700, 1200],
+    backgroundColor: 'rgba(116, 119, 191, .3)',
+    borderWidth: 1,
+  }]
+};
 
-let trafficData = {
+let trafficDataWeekly = {
   labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
 "4-10", "11-17", "18-24", "25-31"],
   datasets: [{
@@ -71,6 +85,24 @@ let trafficData = {
     borderWidth: 1,
   }]
 };
+
+let trafficDataDaily = {
+  labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+  datasets: [{
+    data: [100, 300, 400, 200, 400, 600, 300],
+    backgroundColor: 'rgba(116, 119, 191, .3)',
+    borderWidth: 1,
+  }]
+}
+
+let trafficDataHourly = {
+  labels: ["00:00", "04:00", "08:00", "12:00", "16:00", "20:00"],
+  datasets: [{
+    data: [500, 300, 100, 700, 100, 500],
+    backgroundColor: 'rgba(116, 119, 191, .3)',
+    borderWidth: 1,
+  }]
+}
 
 let trafficOptions = {
   aspectRatio: 2.5,
@@ -88,7 +120,7 @@ let trafficOptions = {
 
 let trafficChart = new Chart(trafficCanvas, {
   type: 'line',
-  data: trafficData,
+  data: trafficDataMonthly,
   options: trafficOptions
 });
 
@@ -187,3 +219,37 @@ function removeNotification(btn){
     badge.innerHTML = dropdown.children.length;
   }
 };
+
+// Functions for changing Traffic Graph
+
+function hourlyTraffic() {
+  let trafficChart = new Chart(trafficCanvas, {
+    type: 'line',
+    data: trafficDataHourly,
+    options: trafficOptions
+  });
+}
+
+function dailyTraffic() {
+  let trafficChart = new Chart(trafficCanvas, {
+    type: 'line',
+    data: trafficDataDaily,
+    options: trafficOptions
+  });
+}
+
+function weeklyTraffic() {
+  let trafficChart = new Chart(trafficCanvas, {
+    type: 'line',
+    data: trafficDataWeekly,
+    options: trafficOptions
+  });
+}
+
+function monthlyTraffic() {
+  let trafficChart = new Chart(trafficCanvas, {
+    type: 'line',
+    data: trafficDataMonthly,
+    options: trafficOptions
+  });
+}

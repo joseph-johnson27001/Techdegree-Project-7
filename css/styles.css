@@ -1,5 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
+  width: 100%;
 }
 
 h1 {
@@ -9,7 +10,7 @@ h1 {
 
  h2, h3 {
   color: #747474;
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 /* ------------------------------------------------------------------
@@ -228,6 +229,7 @@ header h3 {
   background-color: white;
   border: 1px solid #DCDCDC;
   display: none;
+  top: 76px;
 }
 
 /* ------------------------------------------------------------------
@@ -264,7 +266,7 @@ MAIN
 
 .main-header-search {
   position: absolute;
-  right:: 0;
+  right: 0;
   text-align: right;
   background-color: #DCDCDC;
   border-bottom-left-radius: 25px;
@@ -295,10 +297,15 @@ MAIN
   margin-left: 10px;
 }
 
-.traffic-nav {
+#traffic-nav {
   list-style-type: none;
   text-align: right;
   margin-right: 20px;
+}
+
+.traffic-button:focus {
+  background-color: #78CF82;
+  color: white;
 }
 
 .traffic-nav-link {
@@ -316,10 +323,6 @@ MAIN
   text-decoration: none;
 }
 
-.traffic-nav-link a:focus {
-  color: white;
-  background-color: #81C98F;
-}
 
 /* Social Stats */
 
