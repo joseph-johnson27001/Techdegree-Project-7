@@ -21,7 +21,6 @@ const bell = document.getElementById("bell-icon");
 const dropdown = document.getElementById("dropdown");
 const badge = document.getElementById("badge");
 
-
 // Settings local storage variables:
 
 let emailCheckbox = document.getElementById("email-checkbox");
@@ -52,6 +51,16 @@ profileStatus = localStorage.getItem('profile-checkbox');
       profileCheckbox.checked = "true";
 }
 
+let timezone = document.getElementById("timezone");
+  timezone.onclick = function() {
+    localStorage.setItem("timezone", timezone.value);
+  }
+
+timezoneStatus = localStorage.getItem("timezone");
+if(!timezoneStatus) {
+  } else {
+    timezone.value = timezoneStatus;
+  }
 /* ---------------------------------------------------
 BELL NOTIFICATION AREA
 -----------------------------------------------------*/
