@@ -21,6 +21,14 @@ const bell = document.getElementById("bell-icon");
 const dropdown = document.getElementById("dropdown");
 const badge = document.getElementById("badge");
 
+// Local Storage Variables
+
+let emailCheckbox = document.getElementById("email-checkbox");
+let profileCheckbox = document.getElementById("profile-checkbox");
+let timezone = document.getElementById("timezone");
+const save = document.getElementById("save");
+const cancel = document.getElementById("cancel");
+
 /* ---------------------------------------------------
 BELL NOTIFICATION AREA
 -----------------------------------------------------*/
@@ -206,27 +214,11 @@ send.addEventListener('click', () => {
 Local Storage Code
 -----------------------------------------------------*/
 
-let emailCheckbox = document.getElementById("email-checkbox");
-  emailCheckbox.onclick = function() {
-    if (document.getElementById('email-checkbox').checked) {
-      localStorage.setItem('email-checkbox', "true");
-  } else {
-      localStorage.setItem('email-checkbox', "false");
-  }
-}
+// Local Storage - On Load:
 
 emailStatus = localStorage.getItem('email-checkbox');
   if (emailStatus == "true") {
       emailCheckbox.checked = "true";
-}
-
-let profileCheckbox = document.getElementById("profile-checkbox");
-  profileCheckbox.onclick = function() {
-    if (document.getElementById('profile-checkbox').checked) {
-      localStorage.setItem('profile-checkbox', "true");
-  } else {
-      localStorage.setItem('profile-checkbox', "false");
-  }
 }
 
 profileStatus = localStorage.getItem('profile-checkbox');
@@ -234,15 +226,36 @@ profileStatus = localStorage.getItem('profile-checkbox');
       profileCheckbox.checked = "true";
 }
 
-let timezone = document.getElementById("timezone");
-  timezone.onclick = function() {
-    localStorage.setItem("timezone", timezone.value);
-  }
-
 timezoneStatus = localStorage.getItem("timezone");
 if(!timezoneStatus) {
   } else {
     timezone.value = timezoneStatus;
+  }
+
+  // Local Storage Save Function
+
+  save.onclick = function() {
+    if (document.getElementById('email-checkbox').checked) {
+      localStorage.setItem('email-checkbox', "true");
+  } else {
+      localStorage.setItem('email-checkbox', "false");
+  }
+    if (document.getElementById('profile-checkbox').checked) {
+      localStorage.setItem('profile-checkbox', "true");
+  } else {
+      localStorage.setItem('profile-checkbox', "false");
+  }
+    localStorage.setItem("timezone", timezone.value); {
+      alert("Your Settings Have Been Saved");
+    }
+  }
+
+// Local Storage Cancel Function
+
+  cancel.onclick = function() {
+    emailCheckbox.checked = false;
+    profileCheckbox.checked = false;
+    timezone.value = "Select a Timezone";
   }
 
 /* ---------------------------------------------------

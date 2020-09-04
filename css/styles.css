@@ -143,16 +143,16 @@ nav {
 
 .widget-container-full,
 .widget-container-half {
-  width: 90vw;
-
+  width: 95%;
+  margin: auto;
 }
 
 @media (min-width: 768px) {
   .widet-container-full {
-    width: 90vw;
+    width: 90%;
   }
   .widget-container-half {
-    width: 45vw;
+    width: 90%;
   }
 }
 
@@ -444,7 +444,7 @@ MAIN
   outline: none;
 }
 
-#searchbar
+#searchbar:focus,
 .form-field:focus,
 .form-area:focus{
   border: 2px solid lightblue;
@@ -452,6 +452,7 @@ MAIN
 
 .form-field {
   height: 30px;
+  margin-bottom: 10px;
 }
 
 .message-button-primary {
