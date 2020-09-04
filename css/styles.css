@@ -44,6 +44,8 @@ header {
 
 .main {
   grid-area: main;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 nav {
@@ -142,6 +144,7 @@ nav {
 .widget-container-full,
 .widget-container-half {
   width: 90vw;
+
 }
 
 @media (min-width: 768px) {
@@ -272,6 +275,7 @@ MAIN
   border-bottom-left-radius: 25px;
   width: 60%;
   right: 0;
+  margin-right: -20px;
 }
 
 .main-header-container {
