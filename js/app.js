@@ -21,46 +21,6 @@ const bell = document.getElementById("bell-icon");
 const dropdown = document.getElementById("dropdown");
 const badge = document.getElementById("badge");
 
-// Settings local storage variables:
-
-let emailCheckbox = document.getElementById("email-checkbox");
-  emailCheckbox.onclick = function() {
-    if (document.getElementById('email-checkbox').checked) {
-      localStorage.setItem('email-checkbox', "true");
-  } else {
-      localStorage.setItem('email-checkbox', "false");
-  }
-}
-
-emailStatus = localStorage.getItem('email-checkbox');
-  if (emailStatus == "true") {
-      emailCheckbox.checked = "true";
-}
-
-let profileCheckbox = document.getElementById("profile-checkbox");
-  profileCheckbox.onclick = function() {
-    if (document.getElementById('profile-checkbox').checked) {
-      localStorage.setItem('profile-checkbox', "true");
-  } else {
-      localStorage.setItem('profile-checkbox', "false");
-  }
-}
-
-profileStatus = localStorage.getItem('profile-checkbox');
-  if (profileStatus == "true") {
-      profileCheckbox.checked = "true";
-}
-
-let timezone = document.getElementById("timezone");
-  timezone.onclick = function() {
-    localStorage.setItem("timezone", timezone.value);
-  }
-
-timezoneStatus = localStorage.getItem("timezone");
-if(!timezoneStatus) {
-  } else {
-    timezone.value = timezoneStatus;
-  }
 /* ---------------------------------------------------
 BELL NOTIFICATION AREA
 -----------------------------------------------------*/
@@ -246,7 +206,44 @@ send.addEventListener('click', () => {
 Local Storage Code
 -----------------------------------------------------*/
 
+let emailCheckbox = document.getElementById("email-checkbox");
+  emailCheckbox.onclick = function() {
+    if (document.getElementById('email-checkbox').checked) {
+      localStorage.setItem('email-checkbox', "true");
+  } else {
+      localStorage.setItem('email-checkbox', "false");
+  }
+}
 
+emailStatus = localStorage.getItem('email-checkbox');
+  if (emailStatus == "true") {
+      emailCheckbox.checked = "true";
+}
+
+let profileCheckbox = document.getElementById("profile-checkbox");
+  profileCheckbox.onclick = function() {
+    if (document.getElementById('profile-checkbox').checked) {
+      localStorage.setItem('profile-checkbox', "true");
+  } else {
+      localStorage.setItem('profile-checkbox', "false");
+  }
+}
+
+profileStatus = localStorage.getItem('profile-checkbox');
+  if (profileStatus == "true") {
+      profileCheckbox.checked = "true";
+}
+
+let timezone = document.getElementById("timezone");
+  timezone.onclick = function() {
+    localStorage.setItem("timezone", timezone.value);
+  }
+
+timezoneStatus = localStorage.getItem("timezone");
+if(!timezoneStatus) {
+  } else {
+    timezone.value = timezoneStatus;
+  }
 
 /* ---------------------------------------------------
 FUNCTIONS

@@ -444,6 +444,12 @@ MAIN
   outline: none;
 }
 
+#searchbar
+.form-field:focus,
+.form-area:focus{
+  border: 2px solid lightblue;
+}
+
 .form-field {
   height: 30px;
 }
